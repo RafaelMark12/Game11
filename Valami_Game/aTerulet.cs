@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace Valami_Game
 {
-
-	public interface Terulet
-	{
+    
+		public interface Terulet
+		{
 		void Leiras();
-	}
+		}
 	class ElsoTerem : Terulet
 	{
 		public void Leiras()
@@ -66,4 +66,3 @@ namespace Valami_Game
 		}
 	}
 }
-
