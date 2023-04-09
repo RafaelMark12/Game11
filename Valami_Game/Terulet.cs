@@ -11,7 +11,7 @@ namespace Valami_Game
 	{
 		void Leiras();
 	}
-	class ElsoTerem : Terulet
+	public class ElsoTerem : Terulet
 	{
 		public void Leiras()
 		{
@@ -27,7 +27,7 @@ namespace Valami_Game
 
 		}
 
-		class HarmadikTerem : Terulet
+		public class HarmadikTerem : Terulet
 		{
 			public void Leiras()
 			{
@@ -36,7 +36,7 @@ namespace Valami_Game
 
 		}
 
-		class NegyedikTerem : Terulet
+		public class NegyedikTerem : Terulet
 		{
 			public void Leiras()
 			{
@@ -45,7 +45,7 @@ namespace Valami_Game
 
 		}
 
-		class Bufe : Terulet
+		public class Bufe : Terulet
 		{
 			public void Leiras()
 			{
@@ -55,7 +55,7 @@ namespace Valami_Game
 
 		}
 
-		class Igazgato : Terulet
+		public class Igazgato : Terulet
 		{
 			public void Leiras()
 			{
@@ -66,4 +66,3 @@ namespace Valami_Game
 		}
 	}
 }
-

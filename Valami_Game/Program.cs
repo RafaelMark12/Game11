@@ -10,6 +10,11 @@ namespace Valami_Game
     {
         static void Main(string[] args)
         {
+            Terulet valami = new ElsoTerem();
+            valami.Leiras();
+            Console.ReadLine();
+            
+
         }
     }
 }
