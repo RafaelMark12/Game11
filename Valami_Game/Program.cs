@@ -13,13 +13,11 @@ namespace Valami_Game
         {
             
             Inventory item = new Inventory();
-
             Terulet valami = new ElsoTerem();
             Npc ember = new Rasszista();
 
-            Console.WindowWidth = 120;
-            Console.WindowHeight = 30;
-            Animalt("Üdvözöllek a Neumann iskolájában.");
+            string ora = "Fizika";
+            Animalt("Üdvözöllek a Neumann János Technikumjában.");
             Thread.Sleep(2000);
             Animalt("Kérlek nyomj egy Entert!");
             Console.ReadLine();
@@ -30,22 +28,45 @@ namespace Valami_Game
             {
                 Console.Clear();
                 Animalt("Indulás...");
+                Thread.Sleep(5000);
+                Console.ReadLine();
             }
             else if (input == "N")
             {
                 Console.Clear();
                 Animalt("A játék hamarosan leáll...");
-                Thread.Sleep(200);
+                Thread.Sleep(2000);
             }
             else
             {
                 Console.Clear();
                 Animalt("ÉRVÉNYTELEN A BEMENET!");
-                Thread.Sleep(200);
+                Animalt("A játék hamarosan leáll...");
+                Thread.Sleep(2000);
             }
-            
+            Console.Clear();
+            Animalt("Beléptél az Aulába. \n\nHamarosan indul az óra, ideje bemenni az órádra.");
+            Thread.Sleep(1000);
+            Animalt($"\nAz első órád a {ora}. \n\nVálasztási opcióid: ");
+            Animalt("Büfé");
+            Animalt("Terem");
+            input = Console.ReadLine();
+            if (input == "Büfé")
+            {
 
+            }
+            else if (input == "Terem")
+            {
 
+            }
+            else
+            {
+                Animalt("ÉRVÉNYTELEN PARANCS");
+                Thread.Sleep(1000);
+                Animalt($"Választási opcióid: ");
+                Animalt("Büfé");
+                Animalt("Terem");
+            }
 
 
 
