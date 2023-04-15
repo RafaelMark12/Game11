@@ -17,11 +17,8 @@ namespace Valami_Game
             Inventory item = new Inventory();
             Terulet valami = new ElsoTerem();
             Npc ember = new Rasszista();
-
-
-
-
-
+            Egyeb ido = new Egyeb();
+            
 
 
             /*Történet kezdete*/
@@ -33,56 +30,75 @@ namespace Valami_Game
             Console.ReadLine();
             Console.Clear();
             Thread.Sleep(1000);
-            Animalt("Szeretne-e bejönni az iskolába? (Y/N)");
-            string input = Console.ReadLine();
-            if (input == "Y")
+            string input;
+            while (true)
             {
-                Console.Clear();
-                Animalt("Indulás...");
-                Thread.Sleep(2000);
-                
-            }
-            else if (input == "N")
-            {
-                Console.Clear();
-                Animalt("A játék hamarosan leáll...");
-                Thread.Sleep(2000);
-                return; //arra szolgál a return itt, hogyha a játék le akarna állítani, 
-                        //ezzel a paranccsal tudjuk kiléptetni a console-ból a személyt.
-                
-            }
-            else
-            {
-                Console.Clear();
-                Animalt("ÉRVÉNYTELEN A BEMENET!");
-                Animalt("A játék hamarosan leáll...");
-                Thread.Sleep(2000);
-                return;
+                Animalt("Szeretne-e bejönni az iskolába? (Y/N)");
+                Console.Write("Válasz: ");
+                input = Console.ReadLine();
+                if (input == "Y")
+                {
+                    Console.Clear();
+                    Animalt("Indulás...");
+                    Thread.Sleep(2000);
+                    break;
+
+                }
+                else if (input == "N")
+                {
+                    Console.Clear();
+                    Animalt("A játék hamarosan leáll...");
+                    Thread.Sleep(2000);
+                    return; //arra szolgál a return itt, hogyha a játék le akarna állítani, 
+                            //ezzel a paranccsal tudjuk kiléptetni a console-ból a személyt.
+
+                }
+                else
+                {
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Animalt("ÉRVÉNYTELEN A BEMENET!");
+                    Console.ResetColor();
+                    Console.Clear();
+                }
             }
             Console.Clear();
-            Animalt("Beléptél az Aulába. \n\nHamarosan indul az óra, ideje bemenni az órádra.");
+            Animalt("Beléptél az Aulába...");
+            Animalt("Merre szeretnél menni?");
             Thread.Sleep(1000);
-            Animalt($"\nAz első órád a {ora}. \n\nVálasztási opcióid: ");
-            Animalt("Büfé");
-            Animalt("Terem");
-            input = Console.ReadLine();
-            if (input == "Büfé")
+            while (true)
             {
-
+                Animalt("\nVálasztási opcióid: ");
+                Animalt("Büfé\tTerem");
+                Console.Write("Válasz: ");
+                input = Console.ReadLine();
+                if (input == "Büfé")
+                {
+                    Animalt("Zúdulás...");
+                    break;
+                }
+                else if (input == "Terem")
+                {
+                    Animalt("Irány a terem...");
+                    break;
+                }
+                else
+                {
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Animalt("ÉRVÉNYTELEN PARANCS");
+                    Console.ResetColor();
+                    Thread.Sleep(1000);
+                }
             }
-            else if (input == "Terem")
-            {
-
-            }
-            else
-            {
-                Animalt("ÉRVÉNYTELEN PARANCS");
-                Thread.Sleep(1000);
-                Animalt($"Választási opcióid: ");
-                Animalt("Büfé");
-                Animalt("Terem");
-            }
+            Console.ReadLine();
         }
+
+
+
+
+
+
+
+
 
 
 

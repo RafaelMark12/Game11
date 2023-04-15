@@ -75,7 +75,7 @@ namespace Valami_Game
 			
 			penz = 2500;
 			kes = "";
-			cigi = 5;
+			cigi = -5;
 			bor = "van bor";
 			szendvics = "van ez";
 			matekkonyv = "van konyv";
