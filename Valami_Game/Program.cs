@@ -4,8 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Threading;
-using Valami_Game;
-using System.Media;
+using Valami_Game; 
+using System.Media; //hang-médiaeszközhöz szükséghez
+
 
 namespace Valami_Game
 {
@@ -14,18 +15,24 @@ namespace Valami_Game
         static void Main(string[] args)
         {
             
+            
             Inventory item = new Inventory();
             Terulet valami = new ElsoTerem();
             Npc ember = new Rasszista();
             Egyeb ido = new Egyeb();
-            
 
+
+
+            /*Háttérzene lefuttatása*/
+            Task.Run(() => BackgroundMusic());
+            Thread.Sleep(5000);
 
             /*Történet kezdete*/
 
             string ora = "Fizika";
             Animalt("Üdvözöllek a Neumann János Technikumjában.");
-            Thread.Sleep(1);
+            
+            Thread.Sleep(2000);
             Animalt("Kérlek nyomj egy Entert!");
             Console.ReadLine();
             Console.Clear();
@@ -86,6 +93,7 @@ namespace Valami_Game
                     Console.ForegroundColor = ConsoleColor.Red;
                     Animalt("ÉRVÉNYTELEN PARANCS");
                     Console.ResetColor();
+                    Console.Clear();
                     Thread.Sleep(1000);
                 }
             }
@@ -100,19 +108,22 @@ namespace Valami_Game
 
 
 
-
-
-
         /*A szöveg animálása ezzel a függvénnyel írható ki*/
         static void Animalt(string text)
         {
-            
+            SoundPlayer player = new SoundPlayer("hang.wav");
             foreach (char c in text)
             {
                 Console.Write(c);
                 Thread.Sleep(75);
             }
             Console.WriteLine();
+        }
+
+        static void BackgroundMusic()
+        {
+            SoundPlayer majom = new SoundPlayer("hatterzene.wav");
+            majom.PlayLooping();
         }
     }
 }
