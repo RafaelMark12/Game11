@@ -15,17 +15,33 @@ namespace Valami_Game
         static void Main(string[] args)
         {
             
+            /*Npc-k meghívása*/
+            Npc Rasszista = new Rasszista();
+            Npc Agressziv = new Agressziv();
+            Npc Kedves = new Kedves();
+            Npc Igazgato = new Igazgato();
+            Npc BabucsTanarno = new BabucsTanarno();
+            Npc RendszerGazda = new RendszerGazda();
+            Npc Bufes = new Bufes();
+            Npc Futar = new Futar();
+
+
+            /*A Termek meghívása*/
+            Terulet TeremOs = new TeremOs();
+            Terulet GT4 = new GT4();
+            Terulet Terem205 = new Terem205();
+            Terulet Terem46 = new Terem46();
+            Terulet Bufe = new Bufe();
+
+            /*Inventory osztály meghívása*/
+            Inventory invent = new Inventory();
             
-            Inventory item = new Inventory();
-            Terulet valami = new ElsoTerem();
-            Npc ember = new Rasszista();
-            Egyeb ido = new Egyeb();
 
-
-
-            /*Háttérzene lefuttatása*/
+            /*Háttérzene lefuttatása
             Task.Run(() => BackgroundMusic());
             Thread.Sleep(5000);
+            */
+
 
             /*Történet kezdete*/
 
@@ -56,8 +72,7 @@ namespace Valami_Game
                     Console.Clear();
                     Animalt("A játék hamarosan leáll...");
                     Thread.Sleep(2000);
-                    return; //arra szolgál a return itt, hogyha a játék le akarna állítani, 
-                            //ezzel a paranccsal tudjuk kiléptetni a console-ból a személyt.
+                    return; 
 
                 }
                 else
@@ -81,11 +96,44 @@ namespace Valami_Game
                 if (input == "Büfé")
                 {
                     Animalt("Zúdulás...");
+                    Thread.Sleep(5000);
+                    Console.Clear();
+                    Animalt(Bufe.Leiras());
+                    Thread.Sleep(1000);
+                    while (true)
+                    {
+                        Animalt("Választási opcióid: \nIgen\tNem");
+                        Console.Write("Válasz: ");
+                        input = Console.ReadLine();
+                        if (input == "Igen")
+                        {
+                            Animalt("Elérhető ajánlatok: ");
+                            Animalt("Vettél valamit....");
+                            Animalt("Irány végre a Terembe menni, mindjárt óra!");                                                                                    
+                            break;
+                        }
+                        else if (input == "Nem")
+                        {
+                            Animalt("Irány a terem akkor...");
+                            Thread.Sleep(5000);
+                            break;
+                        }
+                        else
+                        {
+                            Console.ForegroundColor = ConsoleColor.Red;
+                            Animalt("ÉRVÉNYTELEN PARANCS");
+                            Console.ResetColor();
+                            Console.Clear();
+                            Thread.Sleep(1000);
+                        }
+                    }
                     break;
                 }
                 else if (input == "Terem")
                 {
                     Animalt("Irány a terem...");
+                    Thread.Sleep(5000);
+                    Animalt(Terem46.Leiras());
                     break;
                 }
                 else
@@ -97,6 +145,10 @@ namespace Valami_Game
                     Thread.Sleep(1000);
                 }
             }
+
+            Console.Clear();
+            Animalt(Terem205.Leiras());
+
             Console.ReadLine();
         }
 
@@ -111,7 +163,7 @@ namespace Valami_Game
         /*A szöveg animálása ezzel a függvénnyel írható ki*/
         static void Animalt(string text)
         {
-            SoundPlayer player = new SoundPlayer("hang.wav");
+            
             foreach (char c in text)
             {
                 Console.Write(c);
@@ -120,10 +172,15 @@ namespace Valami_Game
             Console.WriteLine();
         }
 
+
+
+
+        /*
         static void BackgroundMusic()
         {
             SoundPlayer majom = new SoundPlayer("hatterzene.wav");
             majom.PlayLooping();
         }
+        */
     }
 }

@@ -30,8 +30,6 @@ namespace Valami_Game
             this.Eletero = 75;
             this.Info = "Rasszista";
         }
-
-        
     }
 
     class Agressziv : Npc
@@ -50,7 +48,6 @@ namespace Valami_Game
             this.Eletero = 120;
             this.Info = "Kedves";
         }
-
     }
 
     class Igazgato : Npc
@@ -60,12 +57,11 @@ namespace Valami_Game
             this.Eletero = 250;
             this.Info = "Igazgato";
         }
-
     }
 
-    class TanarEgy : Npc
+    class BabucsTanarno : Npc
     {
-        public TanarEgy()
+        public BabucsTanarno()
         {
             this.Eletero = 150;
             this.Info = "TanarEgy";
@@ -73,14 +69,13 @@ namespace Valami_Game
 
     }
 
-    class TanarKetto : Npc
+    class JozsiTanar: Npc
     {
-        public TanarKetto()
+        public JozsiTanar()
         {
             this.Eletero = 145;
             this.Info = "Tanarketto";
         }
-
     }
 
     class RendszerGazda : Npc
@@ -97,9 +92,9 @@ namespace Valami_Game
     {
         public Bufes()
         {
-            this.Info = "Bufes";
+            this.Info = "A koromhoz képest kifejezetten jól kínálok a leendő diákoknak a kosztomat." +
+                "\n\nEsetleg szeretnél kérni valamit? ";
         }
-
     }
 
     class Futar : Npc

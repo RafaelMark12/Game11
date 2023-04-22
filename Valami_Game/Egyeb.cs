@@ -24,7 +24,7 @@ namespace Valami_Game
             string elapsedTimeString = string.Format("{0:00}:{1:00}:{2:00}",
            (int)elapsedTime.TotalHours, elapsedTime.Minutes, elapsedTime.Seconds);
 
-            return $"Elapsed time: {elapsedTimeString}";
+            return $"Játékidő: {elapsedTimeString}";
 
         }
         
