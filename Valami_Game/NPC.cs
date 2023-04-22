@@ -50,6 +50,15 @@ namespace Valami_Game
         }
     }
 
+    class Dealer : Npc
+    {
+        public Dealer()
+        {
+            this.Eletero = 140;
+            this.Info = "Szeretnél valamit öcsi?";
+        }
+    }
+
     class Igazgato : Npc
     {
         public Igazgato()
@@ -102,6 +111,14 @@ namespace Valami_Game
         public Futar()
         {
             this.Info = "Futar";
+        }
+    }
+
+    class LegjobbBarat : Npc
+    {
+        public LegjobbBarat()
+        {
+            this.Info = "Legjobb barat";
         }
     }
 }

@@ -9,7 +9,6 @@ namespace Valami_Game
 
 	public interface Terulet
 	{
-		
 		string Leiras();
 		void Esemeny();
 	}
@@ -63,6 +62,31 @@ namespace Valami_Game
 		}
 	}
 
+	public class Terem33 : Terulet
+	{
+		public string Leiras()
+		{
+			return "Megérkeztél a 33-as terembe, késésben voltál, úgyhogy próbálj meg csendben helyet foglalni.";
+		}
+		public void Esemeny()
+		{
+
+		}
+	}
+
+	public class Terem133 : Terulet
+	{
+		public string Leiras()
+		{
+			return "Megérkeztél a 133-as terembe, egy kis nosztalgia.";
+		}
+		public void Esemeny()
+		{
+
+		}
+	}
+
+
 	public class Bufe : Terulet
 	{
 		public string Leiras()
@@ -89,5 +113,64 @@ namespace Valami_Game
 
 		}
 	}
+
+		public class Aula : Terulet
+	{
+		public string Leiras()
+		{
+			return "Megérkeztél az Aulába, 20 perces szünet van, zsong az aula.";
+		}
+		public void Esemeny()
+		{
+
+		}
+	}
+
+		public class Lepcso : Terulet
+	{
+		public string Leiras()
+		{
+			return "Megérkeztél a lépcsőhöz, menj fel az első emeletre.";
+		}
+		public void Esemeny()
+		{
+
+		}
+	}
+
+		public class Oltozo : Terulet
+	{
+		public string Leiras()
+		{
+			return "Beléptél az öltözőbe, vedd ki a szekrényből a cuccod és nyomás testnevelés órára.";
+		}
+		public void Esemeny()
+		{
+
+		}
+	}
 	
+		public class Tornaterem : Terulet
+	{
+		public string Leiras()
+		{
+			return "Megérkeztél a tornaterembe, 3 kör futás.";
+		}
+		public void Esemeny()
+		{
+
+		}
+	}
+
+		public class Kijárat : Terulet
+	{
+		public string Leiras()
+		{
+			return "Vége a napnak, irány haza.";
+		}
+		public void Esemeny()
+		{
+
+		}
+	}
 }
