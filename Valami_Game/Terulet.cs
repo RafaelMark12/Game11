@@ -54,7 +54,7 @@ namespace Valami_Game
 	{
 		public string Leiras()
 		{
-			return "Negyedik terem, ahova bejártál. (NO COMMENT)";
+			return "46-s terem, ahova bejártál. (NO COMMENT)";
 		}
 		public void Esemeny()
 		{
@@ -91,9 +91,9 @@ namespace Valami_Game
 	{
 		public string Leiras()
 		{
-			return "Üdvözöllek a Büfében. Az ételek megdrágultak, a szankciók sokasága bővül" +
-			", az infláció emelkedik, de a hasad nem vár." +
-			"\n\n Szeretnél venni valamit esetleg?";
+			return "Üdvözöllek a Büfében. Az ételek megdrágultak.\nA szankciók sokasága bővül" +
+			" az infláció emelkedik.\nAzonban a hasad nem vár." +
+			"\n\nSzeretnél venni valamit esetleg?";
 		}
 		public void Esemeny()
 		{

@@ -19,11 +19,11 @@ namespace Valami_Game
 		private int toll;
 		private int telefon;
 		private int ora;
-		private int taska;
-		private int bankkartya;
 		private int laptop;
 		private int ruzs;
 		private int tornacsuka;
+		private int amongus;
+		private int fank;
 
 		public int Eleted
         {
@@ -32,8 +32,8 @@ namespace Valami_Game
         }
 		public int Okol
         {
-            get { return eleted; }
-            set { eleted = value; }
+            get { return okol; }
+            set { okol = value; }
         }
 		
 		public int Penz
@@ -52,13 +52,11 @@ namespace Valami_Game
 			get { return cigi; }
 			set { cigi = value; }
 		}
-
 		public int Bor
 		{
 			get { return bor; }
 			set { bor = value; }
 		}
-
 		public int Szendvics
 		{
 			get { return szendvics; }
@@ -69,73 +67,65 @@ namespace Valami_Game
 			get { return matekkonyv; }
 			set { matekkonyv = value; }
 		}
-
 		public int Toll
 		{
 			get { return toll; }
 			set { toll = value; }
 		}
-
 		public int Telefon
 		{
 			get { return telefon; }
 			set { telefon = value; }
 		}
-
 		public int Ora
 		{
 			get { return ora; }
 			set { ora = value; }
 		}
-
-		public int Taska
-		{
-			get { return taska; }
-			set { taska = value; }
-		}
-
-		public int Bankkartya
-		{
-			get { return bankkartya; }
-			set { bankkartya = value; }
-		}
-
 		public int Laptop
 		{
 			get { return laptop; }
 			set { laptop = value; }
 		}
-
 		public int Ruzs
 		{
 			get { return ruzs; }
 			set { ruzs = value; }
 		}
-
 		public int Tornacsuka
 		{
 			get { return tornacsuka; }
 			set { tornacsuka = value; }
+		}
+		public int Amongus
+        {
+            get { return amongus; }
+            set { amongus = value; }
+        }
+		public int Fank
+		{
+			get { return fank; }
+			set { fank = value; }
 		}
 		public Inventory()
 		{
 			Random rnd = new Random();
 			eleted = 200;
 			okol = rnd.Next(10, 150);
-			penz = rnd.Next(1000,5000);
+			penz = rnd.Next(500,1500);
 			kes = rnd.Next(100,175);
 			cigi = rnd.Next(10,50);
 			bor = rnd.Next(20,75);
 			szendvics = rnd.Next(75,150);
-			matekkonyv = rnd.Next(10,75);
+			matekkonyv = rnd.Next(1000,2000);
 			toll = rnd.Next(10,150);
 			telefon = rnd.Next(500,2500);
 			ora = rnd.Next(1500,3500);
-			Taska = rnd.Next(2000,3000);
-			Bankkartya = rnd.Next(1000,5000);
-			laptop = rnd.Next(1000,3000);
+			laptop = rnd.Next(2000,4500);
 			ruzs = rnd.Next(10,150);
 			tornacsuka = rnd.Next(10,150);
+			amongus = rnd.Next(1250,1350);
+			fank = rnd.Next(100,250);
 		}
 
 	}
