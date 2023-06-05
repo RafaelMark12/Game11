@@ -14,7 +14,7 @@ namespace Valami_Game
     {
         static void Main(string[] args)
         {
-            
+
             /*Npc-k meghívása*/
             Npc Rasszista = new Rasszista();
             Npc Agressziv = new Agressziv();
@@ -28,7 +28,7 @@ namespace Valami_Game
             Npc Bufes = new Bufes();
             Npc Futar = new Futar();
 
-
+            
             /*A Termek meghívása*/
             Terulet TeremOs = new TeremOs();
             Terulet GT4 = new GT4();
@@ -46,20 +46,20 @@ namespace Valami_Game
             Dictionary<string, int> taska = new Dictionary<string, int>();
             taska.Add("Laptop", invent.Laptop);
             taska.Add("Matekkönyv", invent.Matekkonyv);
-            taska.Add("Toll",invent.Toll);
+            taska.Add("Toll", invent.Toll);
             taska.Add("Óra", invent.Ora);
             taska.Add("Tornacsuka", invent.Tornacsuka);
             taska.Add("Telefon", invent.Telefon);
 
             Dictionary<string, int> bufetar = new Dictionary<string, int>();
-            bufetar.Add("Szendvics",invent.Szendvics);
+            bufetar.Add("Szendvics", invent.Szendvics);
             bufetar.Add("Bor", invent.Bor);
             bufetar.Add("Fank", invent.Fank);
 
             Dictionary<string, int> deal = new Dictionary<string, int>();
-            deal.Add("Kés",invent.Kes);
+            deal.Add("Kés", invent.Kes);
             deal.Add("Amongus", invent.Amongus);
-            
+
 
 
 
@@ -70,42 +70,45 @@ namespace Valami_Game
 
 
             Animalt("Üdvözöllek a Neumann János Technikumjában.");
-            
-            Thread.Sleep(500);
+
+            EzerKesleltetes();
             Animalt("\nAlap információk: ");
-            Animalt($"Életerő: {invent.Eleted}");
-            Animalt($"Pénz: {invent.Penz}");
-            Thread.Sleep(100);
+            OtKesleltetes();
+            Console.WriteLine($"Életerő: {invent.Eleted}");
+            OtKesleltetes();
+            Console.WriteLine($"Pénz: {invent.Penz}");
+            OtKesleltetes();
             Animalt("\nTáska tartalma:");
             foreach (var i in taska)
             {
-                Animalt($"{i.Key}");
+                Console.WriteLine($"{i.Key}");
+                OtKesleltetes();
             }
-            Thread.Sleep(2000);
+            EzerKesleltetes();
             Animalt("\nA játék indításához kérlek nyomj egy Entert!");
             Console.ReadLine();
             Console.Clear();
-            Thread.Sleep(4000);
+            NegyEKesleltetes();
             string input;
             while (true)
             {
-                Animalt("Szeretne-e bejönni az iskolába? (Igen/Nem)");
+                Animalt("Szeretne-e bejönni az iskolába? (Y/N)");
                 Console.Write("Válasz: ");
                 input = Console.ReadLine();
-                if (input == "Igen")
+                if (input == "Y" || input == "Igen")
                 {
                     Console.Clear();
                     Animalt("Indulás...");
-                    Thread.Sleep(3000);
+                    NegyEKesleltetes();
                     break;
 
                 }
-                else if (input == "Nem")
+                else if (input == "N" || input == "Nem")
                 {
                     Console.Clear();
                     Animalt("A játék hamarosan leáll...");
-                    Thread.Sleep(2000);
-                    return; 
+                    StopKesleltetes();
+                    return;
 
                 }
                 else
@@ -113,34 +116,34 @@ namespace Valami_Game
                     Console.ForegroundColor = ConsoleColor.Red;
                     Animalt("ÉRVÉNYTELEN A BEMENET!");
                     Console.ResetColor();
-                    Thread.Sleep(1000);
+                    EzerKesleltetes();
                     Console.Clear();
                 }
             }
             Console.Clear();
             Animalt("Beléptél az Aulába...");
             Animalt("Merre szeretnél menni?");
-            Thread.Sleep(1000);
+            EzerKesleltetes();
             while (true)
             {
-                
+
                 Animalt("Büfé\tTerem");
                 Console.Write("Válasz: ");
                 input = Console.ReadLine();
                 if (input == "Büfé")
                 {
                     Animalt("Zúdulás...");
-                    Thread.Sleep(5000);
+                    NegyEKesleltetes();
                     Console.Clear();
                     Animalt(Bufe.Leiras());
-                    Thread.Sleep(1000);
+                    EzerKesleltetes();
                     BufeEsemeny();
                     break;
                 }
                 else if (input == "Terem")
                 {
                     Animalt("Irány a terem...");
-                    Thread.Sleep(5000);
+                    NegyEKesleltetes();
                     break;
                 }
                 else
@@ -149,33 +152,33 @@ namespace Valami_Game
                     Animalt("ÉRVÉNYTELEN PARANCS");
                     Console.ResetColor();
                     Console.Clear();
-                    Thread.Sleep(1000);
+                    EzerKesleltetes();
                 }
             }
 
             Console.Clear();
-            Thread.Sleep(1000);
+            EzerKesleltetes();
             Animalt(Terem205.Leiras());
+            NegyEKesleltetes();
+            Animalt("Visszamentél az aulába");
+            ElsoEvent();
             Console.ReadLine();
 
 
 
+            /*Az adott helyszínek, vagy más eseményei*/
 
-
-
-
-            
             void BufeEsemeny()
             {
                 while (true)
                 {
-                    Animalt("Igen\tNem");
+                    Animalt("Y/N");
                     Console.Write("Válasz: ");
                     input = Console.ReadLine();
-                    if (input == "Igen")
+                    if (input == "Igen" || input == "Y")
                     {
                         Console.Clear();
-                        Thread.Sleep(1000);
+                        EzerKesleltetes();
                         while (true)
                         {
                             Animalt("Elérhető ajánlatok: ");
@@ -183,7 +186,7 @@ namespace Valami_Game
                             {
                                 Animalt($"{i.Key} - {i.Value}");
                             }
-                            Thread.Sleep(500);
+                            OtKesleltetes();
                             Console.Write("Válasz: ");
                             input = Console.ReadLine();
                             if (bufetar.ContainsKey(input))
@@ -249,20 +252,39 @@ namespace Valami_Game
                                             Console.ResetColor();
                                         }
                                         break;
+                                    case "Fank":
+                                        Animalt("Vásárlásod folyamatban: ");
+                                        invent.Eleted = invent.Eleted - invent.Fank;
+                                        if (invent.Eleted > 0)
+                                        {
+                                            bufetar.Remove("Fank");
+                                            Console.ForegroundColor = ConsoleColor.Green;
+                                            Animalt("Vásárlásod Sikeres");
+                                            Console.ResetColor();
+                                            Animalt("Megmaradt összeged: " + invent.Penz);
+                                        }
+                                        else
+                                        {
+                                            Console.ForegroundColor = ConsoleColor.Red;
+                                            Animalt("Nincs Pízzed!");
+                                            Animalt("Nem tudtad megvenni.");
+                                            Console.ResetColor();
+                                        }
+                                        break;
 
                                 }
 
                                 break;
                             }
                         }
-                        Thread.Sleep(1000);
+                        EzerKesleltetes();
                         Animalt("\nIrány végre a Terembe menni, mindjárt óra!");
                         break;
                     }
-                    else if (input == "Nem")
+                    else if (input == "Nem" || input == "N")
                     {
                         Animalt("Irány a terem akkor...");
-                        Thread.Sleep(5000);
+                        NegyEKesleltetes();
                         break;
                     }
                     else
@@ -271,12 +293,95 @@ namespace Valami_Game
                         Animalt("ÉRVÉNYTELEN PARANCS");
                         Console.ResetColor();
                         Console.Clear();
-                        Thread.Sleep(1000);
+                        EzerKesleltetes();
                     }
                 }
             }
+
+
+
+            void ElsoEvent()
+            {
+                Animalt(TeremOs.Leiras());
+                OtKesleltetes();
+                Animalt("Az idő elmúlásával növelted az életerődet és a tudásodat" +
+                    ", amely segítségével képes vagy Neumann fejében átdolgozni.");
+                invent.Eleted = invent.Eleted + 200;
+                Console.ForegroundColor = ConsoleColor.DarkGreen;
+                Animalt("Az életerőd pontszáma: "+invent.Eleted);
+                Console.ResetColor();
+                EzerKesleltetes();
+                Animalt("Visszamész az aulába, mintha mise történt volna.");
+            }
+
+            void MasodikEvent()
+            {
+                Animalt("");
+                OtKesleltetes();
+                Animalt("Találkoztál a bunkó osztálytársaddal, aki belédkötött");
+                Animalt("\nVissza szeretnél bökni? ");
+                
+                
+                
+                while (true)
+                {
+                    Animalt("I\tN");
+                    input = Console.ReadLine();
+                    if (input == "I")
+                    {
+                        Animalt("Megbökted, emiatt kialakult egy párbaj.");
+                        break;
+                    }
+                    else if (input == "N")
+                    {
+                        Animalt("Nem bökted meg, nem foglalkoztál vele.");
+                        break;
+                    }
+                    else
+                    {
+                        Console.ForegroundColor = ConsoleColor.Red;
+                        Animalt("ÉRVÉNYTELEN A BEMENET!");
+                        Console.ResetColor();
+                        EzerKesleltetes();
+                        Console.Clear();
+                    }
+                }
+                    
+                
+            }
+            
+            void HarmadikEvent()
+            {
+
+            }
+
+            void NegyedikEvent()
+            {
+
+            }
+
+            void OtodikEvent()
+            {
+
+            }
+
+            void HatodikEvent()
+            {
+
+            }
+
+            void HetedikEvent()
+            {
+
+            }
+
+
+
         }
 
+
+
+        
 
 
 
@@ -292,13 +397,31 @@ namespace Valami_Game
             foreach (char c in text)
             {
                 Console.Write(c);
-                Thread.Sleep(80);
+                Thread.Sleep(1);
             }
             Console.WriteLine();
         }
 
 
+        //A Késleltetések egyszerűbbé vétele
+        static void OtKesleltetes()
+        {
+            Thread.Sleep(500);
+        }
 
+        static void EzerKesleltetes()
+        {
+            Thread.Sleep(1000);
+        }
+
+        static void NegyEKesleltetes()
+        {
+            Thread.Sleep(4000);
+        }
+        static void StopKesleltetes()
+        {
+            Thread.Sleep(2000);
+        }
         /*
         static void BackgroundMusic()
         {

@@ -115,8 +115,8 @@ namespace Valami_Game
 			penz = rnd.Next(500,1500);
 			kes = rnd.Next(100,175);
 			cigi = rnd.Next(10,50);
-			bor = rnd.Next(20,75);
-			szendvics = rnd.Next(75,150);
+			bor = rnd.Next(100,250);
+			szendvics = rnd.Next(225,350);
 			matekkonyv = rnd.Next(1000,2000);
 			toll = rnd.Next(10,150);
 			telefon = rnd.Next(500,2500);
@@ -125,7 +125,7 @@ namespace Valami_Game
 			ruzs = rnd.Next(10,150);
 			tornacsuka = rnd.Next(10,150);
 			amongus = rnd.Next(1250,1350);
-			fank = rnd.Next(100,250);
+			fank = rnd.Next(200,400);
 		}
 
 	}

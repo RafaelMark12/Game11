@@ -55,7 +55,7 @@ namespace Valami_Game
         public Dealer()
         {
             this.Eletero = 140;
-            this.Info = "Szeretnél valamit öcsi?";
+            this.Info = "Szeretnél valamit öcsi?\nAmit kínálok nem több, mint puszta véletlen kereskedelem.\nAmit nálam kereshetsz, azt más diákodnál még sohasem.";
         }
     }
 
