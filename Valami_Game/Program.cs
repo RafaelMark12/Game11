@@ -71,102 +71,301 @@ namespace Valami_Game
 
             Animalt("Üdvözöllek a Neumann János Technikumjában.");
 
-            EzerKesleltetes();
-            Animalt("\nAlap információk: ");
-            OtKesleltetes();
-            Console.WriteLine($"Életerő: {invent.Eleted}");
-            OtKesleltetes();
-            Console.WriteLine($"Pénz: {invent.Penz}");
-            OtKesleltetes();
-            Animalt("\nTáska tartalma:");
-            foreach (var i in taska)
-            {
-                Console.WriteLine($"{i.Key}");
-                OtKesleltetes();
-            }
-            EzerKesleltetes();
-            Animalt("\nA játék indításához kérlek nyomj egy Entert!");
-            Console.ReadLine();
-            Console.Clear();
-            NegyEKesleltetes();
+            AlapInformáció();
+            JátékSzabály();
             string input;
-            while (true)
-            {
-                Animalt("Szeretne-e bejönni az iskolába? (Y/N)");
-                Console.Write("Válasz: ");
-                input = Console.ReadLine();
-                if (input == "Y" || input == "Igen")
-                {
-                    Console.Clear();
-                    Animalt("Indulás...");
-                    NegyEKesleltetes();
-                    break;
-
-                }
-                else if (input == "N" || input == "Nem")
-                {
-                    Console.Clear();
-                    Animalt("A játék hamarosan leáll...");
-                    StopKesleltetes();
-                    return;
-
-                }
-                else
-                {
-                    Console.ForegroundColor = ConsoleColor.Red;
-                    Animalt("ÉRVÉNYTELEN A BEMENET!");
-                    Console.ResetColor();
-                    EzerKesleltetes();
-                    Console.Clear();
-                }
-            }
-            Console.Clear();
-            Animalt("Beléptél az Aulába...");
-            Animalt("Merre szeretnél menni?");
-            EzerKesleltetes();
-            while (true)
-            {
-
-                Animalt("Büfé\tTerem");
-                Console.Write("Válasz: ");
-                input = Console.ReadLine();
-                if (input == "Büfé")
-                {
-                    Animalt("Zúdulás...");
-                    NegyEKesleltetes();
-                    Console.Clear();
-                    Animalt(Bufe.Leiras());
-                    EzerKesleltetes();
-                    BufeEsemeny();
-                    break;
-                }
-                else if (input == "Terem")
-                {
-                    Animalt("Irány a terem...");
-                    NegyEKesleltetes();
-                    break;
-                }
-                else
-                {
-                    Console.ForegroundColor = ConsoleColor.Red;
-                    Animalt("ÉRVÉNYTELEN PARANCS");
-                    Console.ResetColor();
-                    Console.Clear();
-                    EzerKesleltetes();
-                }
-            }
-
-            Console.Clear();
-            EzerKesleltetes();
-            Animalt(Terem205.Leiras());
-            NegyEKesleltetes();
-            Animalt("Visszamentél az aulába");
+            Belépés();
+            InditoEvent();
+            AulaEvent();
             ElsoEvent();
+            AulaEvent();
             Console.ReadLine();
 
 
 
             /*Az adott helyszínek, vagy más eseményei*/
+
+            void JátékSzabály()
+            {
+                Animalt("\nA játékban van I/N VAGY Y/N Válaszadás, ahol csak 'I' vagy'Y'(igen) betűvel, vagy 'N'(nem) betűvel választhatsz.");
+                OtKesleltetes();
+                Animalt("\nA helyválasztós vagy esetleg értékválasztós, ahol kaját vagy tárgyat lehet választani,\n mindig is a tárgy előtti számot ír be, utána üss le egy Entert!");
+                Animalt("\n\nPéldául: \t1 - Alma, 2 - Körte. \nEzeknél mindig csak a számot írd be!");
+                OtKesleltetes();
+                Animalt("\nA büfében pedig az étel vagy az  adott vásárolnivalót adja meg szó szerint, \nPéldául: 'Alma'\tVálaszában az Alma szót beírja és egy Entert leüt.");
+                Animalt("\nA játék indításához kérlek nyomj egy Entert!");
+                Console.ReadLine();
+                Console.Clear();
+                NegyEKesleltetes();
+            }
+            void AlapInformáció()
+            {
+                EzerKesleltetes();
+                Animalt("\nAlap információk: ");
+                OtKesleltetes();
+                Console.WriteLine($"Életerő: {invent.Eleted}");
+                OtKesleltetes();
+                Console.WriteLine($"Pénz: {invent.Penz}");
+                OtKesleltetes();
+                Animalt("\nTáska tartalma:");
+                foreach (var i in taska)
+                {
+                    Console.WriteLine($"{i.Key}");
+                    OtKesleltetes();
+                }
+                EzerKesleltetes();
+            }
+            void Belépés()
+            {
+                while (true)
+                {
+                    Animalt("Szeretne-e bejönni az iskolába? (Y/N)");
+                    Console.Write("Válasz: ");
+                    input = Console.ReadLine();
+                    if (input == "Y" || input == "Igen")
+                    {
+                        Console.Clear();
+                        Animalt("Indulás...");
+                        NegyEKesleltetes();
+                        break;
+
+                    }
+                    else if (input == "N" || input == "Nem")
+                    {
+                        Console.Clear();
+                        Animalt("A játék hamarosan leáll...");
+                        StopKesleltetes();
+                        return;
+
+                    }
+                    else
+                    {
+                        Console.ForegroundColor = ConsoleColor.Red;
+                        Animalt("ÉRVÉNYTELEN A BEMENET!");
+                        Console.ResetColor();
+                        EzerKesleltetes();
+                        Console.Clear();
+                    }
+                }
+                Console.Clear();
+                Animalt("Beléptél az Aulába...");
+
+                EzerKesleltetes();
+                while (true)
+                {
+
+                    Animalt("Merre szeretnél menni?");
+                    Console.WriteLine("1 - Büfé");
+                    Console.WriteLine("2 - Terem");
+                    Console.Write("Válasz: ");
+                    input = Console.ReadLine();
+                    if (input == "1")
+                    {
+                        Animalt("Zúdulás...");
+                        NegyEKesleltetes();
+                        Console.Clear();
+                        Animalt(Bufe.Leiras());
+                        EzerKesleltetes();
+                        BufeEsemeny();
+                        break;
+                    }
+                    else if (input == "2")
+                    {
+                        Animalt("Irány a terem...");
+                        NegyEKesleltetes();
+                        break;
+                    }
+                    else
+                    {
+                        Console.ForegroundColor = ConsoleColor.Red;
+                        Animalt("ÉRVÉNYTELEN PARANCS");
+                        Console.ResetColor();
+                        Console.Clear();
+                        EzerKesleltetes();
+                    }
+                }
+                Console.Clear();
+                EzerKesleltetes();
+            }
+            
+            void InditoEvent()
+            {
+                Console.Clear();
+                Animalt(Terem205.Leiras());
+                OtKesleltetes();
+                Animalt("Megtudtad, hogy a következő órák váratlanul fognak lenni, így izgalmas lesz a mai napod.");
+                OtKesleltetes();
+                Animalt("Visszamentél az aulába.");
+                NegyEKesleltetes();
+            }
+            void AulaEvent()
+            {
+                Console.Clear();
+                Animalt("Most több opciód is lesz a választásra.");
+                OtKesleltetes();
+                
+                while (true)
+                {
+                    Animalt("Az alábbi opciók közúl tudsz választani, hogy mit szeretnél csinálni(Válaszként csak a számot írd be!): ");
+                    Console.WriteLine("1 - Menni a következő órára.");
+                    OtKesleltetes();
+                    Console.WriteLine("2 - Pihenni, aulában lenni.");
+                    OtKesleltetes();
+                    Console.WriteLine("3 - Büfébe menni.");
+                    OtKesleltetes();
+                    Console.WriteLine("4 - Információk");
+                    OtKesleltetes();
+                    Console.WriteLine("5 - Kimenni az iskolából.");
+                    OtKesleltetes();
+                    Console.Write("Válasz: ");
+                    input = Console.ReadLine();
+
+                    if (input == "1")
+                    {
+                        Animalt("Irány a terem...");
+                        NegyEKesleltetes();
+                        break;
+                    }
+                    else if (input == "2")
+                    {
+                        Animalt("Itt maradtál az aulában.");
+                        OtKesleltetes();
+                        Animalt("Leültél egy padra, miközben beszélgettél a barátaiddal, illetve osztálytársaiddal...");
+                        EzerKesleltetes();
+                        for (int i = 0; i < 5; i++)
+                        {
+                            Animalt("Prrr...");
+                            Thread.Sleep(100);
+                        }
+                        Animalt("Meghallottad a csengőt, emiatt gyorsan beszaladsz a terembe...");
+                        EzerKesleltetes();
+                        break;
+                    }
+                    else if (input == "3")
+                    {
+                        Animalt("A büfét választottad, így indulás...");
+                        EzerKesleltetes();
+                        BufeEsemeny();
+                    }
+                    else if (input == "4")
+                    {
+                        Animalt("\nAlap információk: ");
+                        OtKesleltetes();
+                        Console.WriteLine($"Életerő: {invent.Eleted}");
+                        OtKesleltetes();
+                        Console.WriteLine($"Pénz: {invent.Penz}");
+                        OtKesleltetes();
+                        Animalt("\nTáska tartalma:");
+                        foreach (var i in taska)
+                        {
+                            Console.WriteLine($"{i.Key}");
+                            OtKesleltetes();
+                        }
+                        EzerKesleltetes();
+                        Animalt("\nHa készenállsz folytatni, akkor nyomj egy Entert!");
+                        Console.ReadLine();
+                        Animalt("Indulás a terembe...");
+                        NegyEKesleltetes();
+                        break;
+                    }
+                    else if (input == "5")
+                    {
+                        Console.Clear();
+                        Animalt("Kiléptél az iskolából, talán egy késsel, de ki tudja, mégis igazolatlan lesz a mai nap...");
+                        OtKesleltetes();
+                        Animalt("A játék hamarosan leáll...");
+                        StopKesleltetes();
+                        return;
+                    }
+                    else
+                    {
+                        Console.ForegroundColor = ConsoleColor.Red;
+                        Animalt("ÉRVÉNYTELEN PARANCS");
+                        Console.ResetColor();
+                        Console.Clear();
+                        EzerKesleltetes();
+                    }
+                }
+            }
+
+
+            void ElsoEvent()
+            {
+                Console.Clear();
+                Animalt(TeremOs.Leiras());
+                OtKesleltetes();
+                Animalt("Az idő elmúlásával növelted az életerődet és a tudásodat" +
+                    ", amely segítségével képes vagy Neumann fejében átdolgozni.");
+                invent.Eleted = invent.Eleted + 200;
+                Console.ForegroundColor = ConsoleColor.DarkGreen;
+                Animalt("Az életerőd pontszáma: "+invent.Eleted);
+                Console.ResetColor();
+                EzerKesleltetes();
+                Animalt("Visszamész az aulába, mintha mise történt volna.");
+                StopKesleltetes();
+
+            }
+
+            void MasodikEvent()
+            {
+                Animalt("");
+                OtKesleltetes();
+                Animalt("Találkoztál a bunkó osztálytársaddal, aki belédkötött");
+                Animalt("\nVissza szeretnél bökni? ");
+                
+                
+                
+                while (true)
+                {
+                    Animalt("I\tN");
+                    input = Console.ReadLine();
+                    if (input == "I")
+                    {
+                        Animalt("Megbökted, emiatt kialakult egy párbaj.");
+                        break;
+                    }
+                    else if (input == "N")
+                    {
+                        Animalt("Nem bökted meg, nem foglalkoztál vele.");
+                        break;
+                    }
+                    else
+                    {
+                        Console.ForegroundColor = ConsoleColor.Red;
+                        Animalt("ÉRVÉNYTELEN A BEMENET!");
+                        Console.ResetColor();
+                        EzerKesleltetes();
+                        Console.Clear();
+                    }
+                }
+                    
+                
+            }
+            
+            void HarmadikEvent()
+            {
+
+            }
+
+            void NegyedikEvent()
+            {
+
+            }
+
+            void OtodikEvent()
+            {
+
+            }
+
+            void HatodikEvent()
+            {
+
+            }
+
+            void HetedikEvent()
+            {
+
+            }
 
             void BufeEsemeny()
             {
@@ -297,85 +496,6 @@ namespace Valami_Game
                     }
                 }
             }
-
-
-
-            void ElsoEvent()
-            {
-                Animalt(TeremOs.Leiras());
-                OtKesleltetes();
-                Animalt("Az idő elmúlásával növelted az életerődet és a tudásodat" +
-                    ", amely segítségével képes vagy Neumann fejében átdolgozni.");
-                invent.Eleted = invent.Eleted + 200;
-                Console.ForegroundColor = ConsoleColor.DarkGreen;
-                Animalt("Az életerőd pontszáma: "+invent.Eleted);
-                Console.ResetColor();
-                EzerKesleltetes();
-                Animalt("Visszamész az aulába, mintha mise történt volna.");
-            }
-
-            void MasodikEvent()
-            {
-                Animalt("");
-                OtKesleltetes();
-                Animalt("Találkoztál a bunkó osztálytársaddal, aki belédkötött");
-                Animalt("\nVissza szeretnél bökni? ");
-                
-                
-                
-                while (true)
-                {
-                    Animalt("I\tN");
-                    input = Console.ReadLine();
-                    if (input == "I")
-                    {
-                        Animalt("Megbökted, emiatt kialakult egy párbaj.");
-                        break;
-                    }
-                    else if (input == "N")
-                    {
-                        Animalt("Nem bökted meg, nem foglalkoztál vele.");
-                        break;
-                    }
-                    else
-                    {
-                        Console.ForegroundColor = ConsoleColor.Red;
-                        Animalt("ÉRVÉNYTELEN A BEMENET!");
-                        Console.ResetColor();
-                        EzerKesleltetes();
-                        Console.Clear();
-                    }
-                }
-                    
-                
-            }
-            
-            void HarmadikEvent()
-            {
-
-            }
-
-            void NegyedikEvent()
-            {
-
-            }
-
-            void OtodikEvent()
-            {
-
-            }
-
-            void HatodikEvent()
-            {
-
-            }
-
-            void HetedikEvent()
-            {
-
-            }
-
-
 
         }
 

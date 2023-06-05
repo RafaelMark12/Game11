@@ -42,7 +42,8 @@ namespace Valami_Game
 		public string Leiras()
 		{
 			return "Megérkeztél a 205-ös terembe. \nEz a terem régen a 11.A osztály" +
-				"teremje volt, de mostmár a 11.C osztály terme lett 1 éve.";
+				"teremje volt, de mostmár a 11.C osztály terme lett 1 éve." +
+				"\nÉrzed ahogy a friss levegő bejön a kinyitott nagy ablakokon.";
 		}
 		public void Esemeny()
 		{
