@@ -344,27 +344,163 @@ namespace Valami_Game
             
             void HarmadikEvent()
             {
+                Animalt("");
+                OtKesleltetes();
+                Animalt("Kaptál egy váratlan telefonhívást egy ismeretlentől.");
+                Animalt("Felvennéd a telefont?");
 
+                while (true)
+                {
+                    Animalt("I\tN");
+                    input = Console.ReadLine();
+                    if (input == "I")
+                    {
+                        Animalt("Felvetted a telefont, és meglepődve hallod, hogy egy híres kutató keresett.");
+                        break;
+                    }
+                    else if (input == "N")
+                    {
+                        Animalt("Nem vetted fel a telefont, és nem tudod, hogy ki hívott.");
+                        break;
+                    }
+                    else
+                    {
+                        Console.ForegroundColor = ConsoleColor.Red;
+                        Animalt("ÉRVÉNYTELEN BEMENET!");
+                        Console.ResetColor();
+                        EzerKesleltetes();
+                        Console.Clear();
+                    }
+                }
             }
 
             void NegyedikEvent()
             {
+                Console.Clear();
+                Animalt(TeremOs.Leiras());
+                OtKesleltetes();
+                Animalt("Egy különleges varázslatot találtál az egyik könyvtárban.");
+                Animalt("Megpróbálod eltanulni a varázslatot?");
 
+                while (true)
+                {
+                    Animalt("I\tN");
+                    input = Console.ReadLine();
+                    if (input == "I")
+                    {
+                        Animalt("Megpróbálod eltanulni a varázslatot, de nehéz feladatnak bizonyul.");
+                        break;
+                    }
+                    else if (input == "N")
+                    {
+                        Animalt("Nem próbálod meg eltanulni a varázslatot, mert úgy érzed, túl kockázatos lenne.");
+                        break;
+                    }
+                    else
+                    {
+                        Console.ForegroundColor = ConsoleColor.Red;
+                        Animalt("ÉRVÉNYTELEN BEMENET!");
+                        Console.ResetColor();
+                        EzerKesleltetes();
+                        Console.Clear();
+                    }
+                }
             }
 
             void OtodikEvent()
             {
+                Animalt("");
+                OtKesleltetes();
+                Animalt("A suliban egy rejtélyes üzenetet találsz a táblán.");
+                Animalt("Megpróbálod megfejteni az üzenetet?");
 
+                while (true)
+                {
+                    Animalt("I\tN");
+                    input = Console.ReadLine();
+                    if (input == "I")
+                    {
+                        Animalt("Megpróbálod megfejteni az üzenetet, és rájössz, hogy egy titkos üzenet van benne elrejtve.");
+                        break;
+                    }
+                    else if (input == "N")
+                    {
+                        Animalt("Nem foglalkozol az üzenettel, mert úgy gondolod, hogy csak valami tréfa lehet.");
+                        break;
+                    }
+                    else
+                    {
+                        Console.ForegroundColor = ConsoleColor.Red;
+                        Animalt("ÉRVÉNYTELEN BEMENET!");
+                        Console.ResetColor();
+                        EzerKesleltetes();
+                        Console.Clear();
+                    }
+                }
             }
 
             void HatodikEvent()
             {
-
+                Animalt("");
+                OtKesleltetes();
+                Animalt("Egy ismeretlen küldött neked egy titkos levélben egy rejtélyes térképet.");
+                Animalt("Elhatározod, hogy felkutatod a térképen jelölt kincset?");
+            
+                while (true)
+                {
+                    Animalt("I\tN");
+                    input = Console.ReadLine();
+                    if (input == "I")
+                    {
+                        Animalt("Úgy döntesz, hogy felkutatod a térképen jelölt kincset, és egy izgalmas kalandba keveredsz.");
+                        break;
+                    }
+                    else if (input == "N")
+                    {
+                        Animalt("Nem foglalkozol a térképpel, mert úgy gondolod, hogy csak átverés lehet.");
+                        break;
+                    }
+                    else
+                    {
+                        Console.ForegroundColor = ConsoleColor.Red;
+                        Animalt("ÉRVÉNYTELEN BEMENET!");
+                        Console.ResetColor();
+                        EzerKesleltetes();
+                        Console.Clear();
+                    }
+                }
             }
 
             void HetedikEvent()
             {
+                Animalt("");
+                OtKesleltetes();
+                Animalt("Egy régi barátod hív, és meghív téged egy izgalmas expedícióra.");
+                Animalt("Elfogadod a meghívást?");
 
+                while (true)
+                {
+                    Animalt("I\tN");
+                    input = Console.ReadLine();
+                    if (input == "I")
+                    {
+                        Animalt("Elfogadod a meghívást, és kalandos útra indultok a barátoddal.");
+                        break;
+                    }
+                    else if (input == "N")
+                    {
+                        Animalt("Nem fogadod el a meghívást, mert úgy érzed, hogy most nem vagy rá készen.");
+                        break;
+                    }
+                    else
+                    {
+                        Console.ForegroundColor = ConsoleColor.Red;
+                        Animalt("ÉRVÉNYTELEN BEMENET!");
+                        Console.ResetColor();
+                        EzerKesleltetes();
+                        Console.Clear();
+                    }
+                }
             }
 
             void BufeEsemeny()
