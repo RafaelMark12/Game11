@@ -60,15 +60,11 @@ namespace Valami_Game
             deal.Add("Kés", invent.Kes);
             deal.Add("Amongus", invent.Amongus);
 
-
-
-
-
-
+            Random rnd = new Random();
 
             /*Történet kezdete*/
 
-
+            
             Animalt("Üdvözöllek a Neumann János Technikumjában.");
 
             AlapInformáció();
@@ -79,6 +75,14 @@ namespace Valami_Game
             AulaEvent();
             ElsoEvent();
             AulaEvent();
+            MasodikEvent();
+            AulaEvent();
+            HarmadikEvent();
+            AulaEvent();
+            NegyedikEvent();
+            AulaEvent();
+            OtodikEvent();
+            Zárás();
             Console.ReadLine();
 
 
@@ -87,13 +91,15 @@ namespace Valami_Game
 
             void JátékSzabály()
             {
-                Animalt("\nA játékban van I/N VAGY Y/N Válaszadás, ahol csak 'I' vagy'Y'(igen) betűvel, vagy 'N'(nem) betűvel választhatsz.");
+                Animalt("\nSzabályzat:");
+                EzerKesleltetes();
+                Animalt("\nAhol ilyen választást látsz: 1 - alma -> akkor mindig a számot írd csak be!");
                 OtKesleltetes();
-                Animalt("\nA helyválasztós vagy esetleg értékválasztós, ahol kaját vagy tárgyat lehet választani,\n mindig is a tárgy előtti számot ír be, utána üss le egy Entert!");
-                Animalt("\n\nPéldául: \t1 - Alma, 2 - Körte. \nEzeknél mindig csak a számot írd be!");
+                Animalt("\nAhol I/N, esetleg Y/N akkor az adott betűt írd csak NAGYBETŰVEL!");
                 OtKesleltetes();
-                Animalt("\nA büfében pedig az étel vagy az  adott vásárolnivalót adja meg szó szerint, \nPéldául: 'Alma'\tVálaszában az Alma szót beírja és egy Entert leüt.");
-                Animalt("\nA játék indításához kérlek nyomj egy Entert!");
+                Animalt("\nHa a büfé eventnél vagy, akkor az adott item nevét írd le szó szerint!s");
+                EzerKesleltetes();
+                Animalt("\n\nHa elolvastad a szabályzatot, akkor a játék indításához nyomj egy Entert!");
                 Console.ReadLine();
                 Console.Clear();
                 NegyEKesleltetes();
@@ -308,7 +314,7 @@ namespace Valami_Game
 
             void MasodikEvent()
             {
-                Animalt("");
+                Terem33.Leiras();
                 OtKesleltetes();
                 Animalt("Találkoztál a bunkó osztálytársaddal, aki belédkötött");
                 Animalt("\nVissza szeretnél bökni? ");
@@ -632,6 +638,62 @@ namespace Valami_Game
                     }
                 }
             }
+
+            void Zárás()
+            {
+                Console.Clear();
+                Animalt("\nAz aulához érve azt látod, hogy az óráidnak vége és hazatudsz menni az iskolából.");
+                EzerKesleltetes();
+                Animalt("\nMivel nem volt probléma, beírás stb, így gazdagságban tudsz a mai nap távozni.");
+                StopKesleltetes();
+                Console.WriteLine("----------------------------------------------------------------------------------");
+                OtKesleltetes();
+                Console.WriteLine(("\n|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||"));
+                OtKesleltetes();
+                Console.WriteLine(("\n---------------------------------------------------------------------------------"));
+                NegyEKesleltetes();
+                Console.Clear();
+                Animalt("A játék hamarosan leáll.");
+                Console.WriteLine("   /**\\ ");
+                OtKesleltetes();
+                Console.WriteLine("  //**\\\\ ");
+                OtKesleltetes();
+                Console.WriteLine(" ///**\\\\\\ ");
+                OtKesleltetes();
+                Console.WriteLine("*========* ");
+                OtKesleltetes();
+                Console.WriteLine("|./\\../\\.| ");
+                OtKesleltetes();
+                Console.WriteLine("|/\\/\\/\\/\\| ");
+                OtKesleltetes();
+                Console.WriteLine("|\\/\\/\\/\\/| ");
+                OtKesleltetes();
+                Console.WriteLine("|.\\/..\\/\\.| ");
+                OtKesleltetes();
+                Console.WriteLine("*========* ");
+                OtKesleltetes();
+                Console.WriteLine("|\\/\\/\\/\\/| ");
+                OtKesleltetes();
+                Console.WriteLine("|.\\/..\\/\\.| ");
+                OtKesleltetes();
+                Console.WriteLine("|./\\../\\.| ");
+                OtKesleltetes();
+                Console.WriteLine("|/\\/\\/\\/\\| ");
+                OtKesleltetes();
+                Console.WriteLine("*========* ");
+                OtKesleltetes();
+                Console.WriteLine("   /**\\ ");
+                OtKesleltetes();
+                Console.WriteLine("  //**\\\\ ");
+                OtKesleltetes();
+                Console.WriteLine(" ///**\\\\\\ ");
+                StopKesleltetes();
+                while (true)
+                {
+                    return;
+                }
+            }
+
 
         }
 
